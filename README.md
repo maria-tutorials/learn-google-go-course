@@ -1,2 +1,5 @@
-# learn-google-go-course
-for the udemy course - https://www.udemy.com/course/learn-how-to-code/
+
+### Learn How To Code: Google's Go (golang) Programming Language
+### Udemy course
+
+[Learn How To Code: Google's Go (golang) Programming Language](https://www.udemy.com/course/learn-how-to-code/)
