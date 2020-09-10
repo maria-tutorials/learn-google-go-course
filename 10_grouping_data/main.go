@@ -72,4 +72,11 @@ func deleteFromMap() {
 	delete(m, "Amália")
 
 	fmt.Println("after :(", m)
+
+	if v, ok := m["Eusébio"]; ok {
+		fmt.Println("deleting:", v)
+		delete(m, "Eusébio")
+	}
+
+	fmt.Println("final", m)
 }
