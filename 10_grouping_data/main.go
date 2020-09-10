@@ -7,7 +7,8 @@ import (
 func main() {
 	//slices()
 	//maps()
-	addToMapAndRange()
+	//addToMapAndRange()
+	deleteFromMap()
 }
 
 func slices() {
@@ -59,4 +60,16 @@ func addToMapAndRange() {
 	for k, v := range m {
 		println(k, v)
 	}
+}
+
+func deleteFromMap() {
+	m := map[string]int{
+		"Amália":  3,
+		"Eusébio": 2,
+	}
+	fmt.Println("before", m)
+
+	delete(m, "Amália")
+
+	fmt.Println("after :(", m)
 }
