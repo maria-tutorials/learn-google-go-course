@@ -6,7 +6,8 @@ import (
 
 func main() {
 	//slices()
-	maps()
+	//maps()
+	addToMapAndRange()
 }
 
 func slices() {
@@ -44,5 +45,18 @@ func maps() {
 	// IMPORTANT
 	if v, ok := m["Lontra"]; ok {
 		fmt.Println(v)
+	}
+}
+
+func addToMapAndRange() {
+	m := map[string]int{
+		"Amália":  3,
+		"Eusébio": 2,
+	}
+
+	m["name of other cute otter"] = 2
+
+	for k, v := range m {
+		println(k, v)
 	}
 }
