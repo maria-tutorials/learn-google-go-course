@@ -2,17 +2,13 @@ package main
 
 import "fmt"
 
-func main() {
-	one()
+type person struct {
+	firstName   string
+	lastName    string
+	favIceCream []string
 }
 
-func one() {
-	type person struct {
-		firstName   string
-		lastName    string
-		favIceCream []string
-	}
-
+func main() {
 	p1 := person{
 		firstName: "Captain",
 		lastName:  "America",
@@ -32,16 +28,17 @@ func one() {
 		},
 	}
 
-	fmt.Println("First person: \n", p1)
-	fmt.Println(p1.firstName, p1.lastName)
-	for i, v := range p1.favIceCream {
-		fmt.Println(i, v)
+	m := map[string]person{
+		p1.lastName: p1,
+		p2.lastName: p2,
 	}
 
-	fmt.Println("Second person: \n", p1)
-	fmt.Println(p2)
-	fmt.Println(p2.firstName, p2.lastName)
-	for i, v := range p2.favIceCream {
-		fmt.Println(i, v)
+	for k, v := range m {
+		fmt.Println(k, ":")
+		fmt.Println(v.firstName, v.lastName)
+
+		for i, v := range v.favIceCream {
+			fmt.Println(i, v)
+		}
 	}
 }
