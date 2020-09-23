@@ -41,4 +41,19 @@ func main() {
 			fmt.Println(i, v)
 		}
 	}
+
+	s := struct {
+		name   string
+		powers map[string]int
+	}{
+		name: p1.firstName + " " + p1.lastName,
+		powers: map[string]int{
+			"Shield":  10,
+			"Muscles": 9,
+		},
+	}
+	fmt.Println(s.name)
+	for k, v := range s.powers {
+		fmt.Println(k, v)
+	}
 }
