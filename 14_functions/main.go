@@ -5,8 +5,9 @@ import (
 )
 
 func main() {
-	x := sum(1, 2, 3, 4, 5, 6, 7, 8, 9)
-	fmt.Println("The total is", x)
+	ii := []int{2, 3, 4, 5, 6, 7, 8, 9}
+	total := sum(ii...) //... notation
+	fmt.Println("The total is", total)
 }
 
 /// func (r receiver) funcName(parameter(s)) (return(s)) { code}
