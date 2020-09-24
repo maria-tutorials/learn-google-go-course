@@ -13,4 +13,13 @@ func main() {
 		fmt.Println(1970)
 	}
 	f()
+
+	g := crazy()
+	fmt.Println(g())
+}
+
+func crazy() func() int {
+	return func() int {
+		return 2020
+	}
 }
