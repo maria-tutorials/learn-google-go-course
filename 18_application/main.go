@@ -5,33 +5,26 @@ import (
 	"fmt"
 )
 
-//NOTE: uppercase
+// https://mholt.github.io/json-to-go/
 type person struct {
-	First string
-	Last  string
-	Age   int
+	First string `json:"First"`
+	Last  string `json:"Last"`
+	Age   int    `json:"Age"`
 }
 
 func main() {
+	s := `[{"First":"Captain","Last":"America","Age":72},{"First":"Natasha","Last":"Romanoff","Age":32}]`
+	bs := []byte(s) //[]uint8
 
-	p1 := person{
-		First: "Captain",
-		Last:  "America",
-		Age:   72,
-	}
-	p2 := person{
-		First: "Natasha",
-		Last:  "Romanoff",
-		Age:   32,
-	}
+	var people []person // people := []person{}
 
-	people := []person{p1, p2}
-
-	fmt.Println(people)
-
-	bs, err := json.Marshal(people)
+	err := json.Unmarshal(bs, &people)
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(string(bs))
+	fmt.Println(people)
+	for i, v := range people {
+		fmt.Println("\n person at index", i)
+		fmt.Println(v.First, v.Last, v.Age)
+	}
 }
