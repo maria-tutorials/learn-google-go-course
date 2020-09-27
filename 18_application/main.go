@@ -5,24 +5,24 @@ import (
 	"fmt"
 )
 
-//NOTE: lowercase
+//NOTE: uppercase
 type person struct {
-	first string
-	last  string
-	age   int
+	First string
+	Last  string
+	Age   int
 }
 
 func main() {
 
 	p1 := person{
-		first: "Captain",
-		last:  "America",
-		age:   72,
+		First: "Captain",
+		Last:  "America",
+		Age:   72,
 	}
 	p2 := person{
-		first: "Natasha",
-		last:  "Romanoff",
-		age:   32,
+		First: "Natasha",
+		Last:  "Romanoff",
+		Age:   32,
 	}
 
 	people := []person{p1, p2}
