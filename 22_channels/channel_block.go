@@ -4,6 +4,7 @@ import "fmt"
 
 func main() {
 	simpleChannel()
+	bufferChannel()
 }
 
 func simpleChannel() {
@@ -13,5 +14,15 @@ func simpleChannel() {
 		c <- 42
 	}()
 
+	fmt.Println(<-c)
+}
+
+func bufferChannel() {
+	c := make(chan string, 2) //buffered channel
+
+	c <- "Princess"
+	c <- "Peach"
+
+	fmt.Println(<-c)
 	fmt.Println(<-c)
 }
