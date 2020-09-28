@@ -1,9 +1,9 @@
+// Package word provides count functions
 package word
 
 import "strings"
 
-// no need to write an example for this one
-// writing a test for this one is a bonus challenge; harder
+// UseCount returns a map with the number of times each word appears in given string s
 func UseCount(s string) map[string]int {
 	xs := strings.Fields(s)
 	m := make(map[string]int)
@@ -13,6 +13,8 @@ func UseCount(s string) map[string]int {
 	return m
 }
 
+// Count returns the number of words in the provided s string
 func Count(s string) int {
-	// write the code for this func
+	xs := strings.Fields(s)
+	return len(xs)
 }
